@@ -1,0 +1,153 @@
+toc:
+*.general
+*.commands
+*.breakpoints
+*.run
+*.threads
+*.reload program
+*.list
+*.step
+*.next
+*.step out
+
+
+*.general
+
+*.commands
+bt-backtrace
+    print stack
+f,frame - stack analysis
+    f 1 - frame 1 analysis
+p,print - print variable
+    p hi2c
+    p/x Flag - print hexadecimal Flag variable
+    p/x {var1,var2,var3,var4}
+    p/x 65537- convert to hex
+        $7 = 0x10001
+    printf "%04x", frame_buffer[0]
+print long array
+    set print elements 0
+    p some_array
+    
+    set print array
+    p/x some_array
+x/nfu
+    x/10b 0x2000c544print 10 bytes
+        0x2000c544 <hi2c2>:0x000x580x000x400xa00x860x010x00
+        0x2000c54c <hi2c2+8>:0x000x00
+
+info,i
+    i args - arguments for function
+    i locals
+    
+    
+*.breakpoints
+b 29 
+    add breakpoint for app.cpp at line 29
+b Logger::shell
+    set a break point at begin of member function
+i b
+    list all breakpoints
+del 1
+    delete break point number 1 ( after i b) 
+    
+    
+*.run
+r
+
+*.threads
+info threads
+
+*.reload program
+after code change and make. reload in gdb by "file app"
+
+*.list
+list,l -    print code
+
+    l logger.cpp:1(file starts from lines 1)
+    l logger.cpp:Logger::shell_logger(file start from function)
+    
+*.step
+s - step inside the function
+
+*.next
+n - execute function - step over
+
+*.step out
+finishtoc:toc*.general*.commands*.breakpoints*.run*.threads*.reload program*.list*.step*.next*.step out*.general*.commandsbt-backtraceprint stackf,frame - stack analysisf 1 - frame 1 analysisp,print - print variablep hi2c2p/x Flag - print hexadecimal Flag variablepp/x {var1,var2,var3,var4}generalp/x 65537- convert to hex$7 = 0x10001printf "%04x", frame_buffer[0]tocprint long arrayset print elements 04xp some_arrayset print arraysetp/x some_arrayx/nfux/10b 0x2000c544print 10 bytes0x2000c544 <hi2c2>:0x000x580x000x400xa00x860x010x000x2000c54c <hi2c2+8>:0x000x00info,ini args - arguments for functioni locals*.breakpointsb 29 generaladd breakpoint for app.cpp at line 29b Logger::shell_loggerset a break point at begin of member functioni btlist all breakpointsdel 10delete break point number 1 ( after i b) run*.runr*.threadsinfo threadsinfo*.reload programafter code change and make. reload in gdb by "file app"general*.listlist,l -    print codel logger.cpp:1(file starts from lines 1)generall logger.cpp:Logger::shell_logger(file start from function)commands*.steps - step inside the functioni*.nextn - execute function - step over*.step outfinishtoc:
+*.general
+*.commands
+*.breakpoints
+*.run
+*.threads
+*.reload program
+*.list
+*.step
+*.next
+*.step out
+
+
+*.general
+
+*.commands
+bt-backtrace
+    print stack
+f,frame - stack analysis
+    f 1 - frame 1 analysis
+p,print - print variable
+    p hi2c
+    p/x Flag - print hexadecimal Flag variable
+    p/x {var1,var2,var3,var4}
+    p/x 65537- convert to hex
+        $7 = 0x10001
+    printf "%04x", frame_buffer[0]
+print long array
+    set print elements 0
+    p some_array
+    
+    set print array
+    p/x some_array
+x/nfu
+    x/10b 0x2000c544print 10 bytes
+        0x2000c544 <hi2c2>:0x000x580x000x400xa00x860x010x00
+        0x2000c54c <hi2c2+8>:0x000x00
+
+info,i
+    i args - arguments for function
+    i locals
+    
+    
+*.breakpoints
+b 29 
+    add breakpoint for app.cpp at line 29
+b Logger::shell
+    set a break point at begin of member function
+i b
+    list all breakpoints
+del 1
+    delete break point number 1 ( after i b) 
+    
+    
+*.run
+r
+
+*.threads
+info threads
+
+*.reload program
+after code change and make. reload in gdb by "file app"
+
+*.list
+list,l -    print code
+
+    l logger.cpp:1(file starts from lines 1)
+    l logger.cpp:Logger::shell_logger(file start from function)
+    
+*.step
+s - step inside the function
+
+*.next
+n - execute function - step over
+
+*.step out
+finish
