@@ -32,7 +32,7 @@ static void* log_client(void* l)
 {
     Logger *pl=(Logger*)l;
 
-    for(int i=0;i<10;i++){
+    for(int i=0;i<10000;i++){
         std::stringstream ss;
         ss<<"Log: Thread #"<<pthread_self()<<" Line #"<<i;
         pl->log(ss.str());

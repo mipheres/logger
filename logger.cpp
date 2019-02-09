@@ -10,6 +10,9 @@ Logger::Logger(){
 
     pthread_mutex_init(&m,NULL);
     pthread_cond_init(&c,NULL);
+    // std::ofstream ofs("log.txt",std::ofstream::out);
+    ofs.open("log.txt",std::ofstream::out);
+    ofs<<"Log file\n"; 
 
     pthread_create(&t,NULL,(THREADFUNCPTR)&Logger::helper,this);
 }
@@ -26,6 +29,7 @@ Logger::~Logger(){
     pthread_mutex_destroy(&m);
     pthread_cond_destroy(&c);
 
+    ofs.close(); 
 }
 
 void Logger::log(std::string s)
@@ -57,7 +61,8 @@ void* Logger::shell_logger()
         pthread_mutex_unlock(&m);
         while(!que.empty()){
             pthread_mutex_lock(&m);
-            std::cout<<que.front()<<"\n";
+            // std::cout<<que.front()<<"\n";
+            ofs<<que.front()<<"\n";
             que.pop(); 
             pthread_mutex_unlock(&m);
         }

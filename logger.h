@@ -4,6 +4,7 @@
 #include <pthread.h>
 #include <queue>
 #include <string>
+#include <fstream>
 
 
 class Logger{
@@ -26,5 +27,6 @@ class Logger{
     // void* shell_logger(void*);
     void* shell_logger();
     bool m_exit;
+    std::ofstream ofs;
 };
 #endif// LOGGER_H
